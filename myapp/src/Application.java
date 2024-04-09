@@ -1,4 +1,4 @@
-package myapp.main;
+package myapp.src;
 
 
 import org.springframework.boot.SpringApplication;
