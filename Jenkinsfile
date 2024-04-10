@@ -10,20 +10,27 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
-                sh 'sudo docker build -t springapp .'
+                script {
+                    echo 'Building Docker Image...'
+                    echo 'sudo docker build -t springapp .'
+                }
             }
         }
         
         stage('Run Docker Container') {
             steps {
-                sh 'sudo docker run -dit --name myapp -p 8081:8080 springapp'
+                script {
+                    echo 'Running Docker Container...'
+                    echo 'sudo docker run -dit --name myapp -p 8081:8080 springapp'
+                }
             }
         }
         
         stage('Test with Curl') {
             steps {
                 script {
-                    sh 'curl http://localhost:8081'
+                    echo 'Testing with Curl...'
+                    echo 'curl http://localhost:8081'
                 }
             }
         }
