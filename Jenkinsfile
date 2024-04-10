@@ -33,7 +33,7 @@ pipeline {
                 script {
                     echo 'Testing with Curl...'
                     echo 'curl http://localhost:8081'
-                    sh 'curl -I localhost:8081'
+                    sh 'curl -GET localhost:8081
                 }
             }
         }
