@@ -13,6 +13,7 @@ pipeline {
                 script {
                     echo 'Building Docker Image...'
                     echo 'sudo docker build -t springapp .'
+                    sleep time: 3, unit: 'MINUTES'
                 }
             }
         }
@@ -22,6 +23,7 @@ pipeline {
                 script {
                     echo 'Running Docker Container...'
                     echo 'sudo docker run -dit --name myapp -p 8081:8080 springapp'
+                    sleep time: 5
                 }
             }
         }
